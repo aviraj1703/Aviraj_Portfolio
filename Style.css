@@ -3,7 +3,18 @@
     padding: 0px;
 }
 body{
-    background : rgb(5, 20, 48);
+    background-color: #0F3460;
+}
+
+/* Header */
+.Header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: fit-content;
+    padding: 2%;
+    flex-wrap: wrap;
+    background : #1A1A2E;
 }
 
 /* picture and background */
@@ -13,20 +24,13 @@ body{
     border-style: dashed;
 }
 .pic{
-    align-content: center;
-    height: 20rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(10, 23, 37);
 }
 
 /* Name */
 #Name{
-    background-color: rgb(10, 23, 37);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     text-align: center;
     font-family: 'Dancing Script', cursive;
     font-size: 64px;
@@ -34,8 +38,6 @@ body{
     font-style: italic;
     color: coral;
     letter-spacing: 3px;
-    height: 11rem;
-    border-bottom: 1px groove rgb(32, 76, 151);
 }
 
 /* Details Navigator */
@@ -44,8 +46,9 @@ body{
    align-items: center;
    justify-content: space-around;
    flex-wrap: wrap;
-   height: 2rem;
-   margin-top: 1.7rem;
+   height: fit-content;
+   padding: 2%;
+   background-color: #16213E;
 }
 .font1{
     font-family: 'Courier New';
@@ -66,28 +69,30 @@ body{
 
 /* About me */
 #About{
-    height: 20rem;
+    height: fit-content;
+    padding: 2%;
     border-top: 1px groove rgb(32, 76, 151);
     display: flex;
     justify-content: space-around;
     align-content: center;
+    flex-wrap: wrap;
     border-bottom: 1px groove rgb(32, 76, 151);
 }
 #About i{
     font-size: 15rem;
     color: brown;
     text-align: center;
-    margin-top: 2.5%;
+    padding: 1%;
 }
 .Me{
     background-color: rgb(47, 173, 58);
-    width: 50%;
-    height: 90%;
+    width: 50rem;
+    height: fit-content;
     border-radius: 20px;
     margin-top: 1%;
 }
 .font2{
-    padding: 2%;
+    padding: 2% 1% 2% 3%;
     display: flex;
     justify-content: space-around;
     align-content: center;
@@ -100,28 +105,30 @@ body{
 
 /* Skills */
 #Skills{
-    height: 20rem;
+    height: fit-content;
+    padding: 2%;
     border-top: 1px groove rgb(32, 76, 151);
     display: flex;
     justify-content: space-around;
     align-content: center;
+    flex-wrap: wrap;
     border-bottom: 1px groove rgb(32, 76, 151);
 }
 #Skills i{
     font-size: 15rem;
     color: gray;
     text-align: center;
-    margin-top: 2.5%;
+    padding: 1%;
 }
 .sk{
     background-color: rgb(85, 36, 114);
-    width: 50%;
-    height: 90%;
+    width: fit-content;
+    height: fit-content;
     border-radius: 20px;
     margin-top: 1%;
 }
 .font3{
-    padding: 2%;
+    padding: 2% 1% 2% 3%;
     display: flex;
     justify-content: space-around;
     align-content: center;
@@ -134,28 +141,30 @@ body{
 
 /* Experience */
 #Experience{
-    height: 20rem;
+    height: fit-content;
+    padding: 2%;
     border-top: 1px groove rgb(32, 76, 151);
     display: flex;
     justify-content: space-around;
     align-content: center;
+    flex-wrap: wrap;
     border-bottom: 1px groove rgb(32, 76, 151);
 }
 #Experience i{
     font-size: 15rem;
     color: rgba(250, 205, 7, 0.877);
     text-align: center;
-    margin-top: 2.5%;
+    padding: 1%;
 }
 .exp{
     background-color: rgb(133, 10, 20);
-    width: 50%;
-    height: 90%;
+    width: 40rem;
+    height: fit-content;
     border-radius: 20px;
     margin-top: 1%;
 }
 .font4{
-    padding: 2%;
+    padding: 2% 1% 2% 3%;
     display: flex;
     justify-content: space-around;
     align-content: center;
@@ -168,31 +177,28 @@ body{
 
 /* Let's get connected */
 #footer1{
-    background-color: rgb(10, 23, 37);
+    background-color: #E94560;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     font-family: 'Dancing Script', cursive;
     font-size: 40px;
     font-weight: bold;
-    color: coral;
+    color: rgba(121, 3, 3, 0.993);
     letter-spacing: 2px;
-    height: 6rem;
-    padding-top: 2%;
-    border-bottom: 1px groove rgb(19, 65, 117);
+    height: fit-content;
+    padding: 2%;
 }
 
 /* Icons */
 #footer2{
-    /* background-color: cadetblue; */
-    background-color: rgb(10, 23, 37);
+    background-color: #E94560;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    height: 7rem;
-    padding-top: 1%;
-    vertical-align: center;
-    width: 100%;
+    height: fit-content;
+    padding: 1%;
 }
 #footer2 i{
     font-size: 40px; 
@@ -200,9 +206,9 @@ body{
 }
 #footer2 i:hover{
     background-image: linear-gradient(to left,rgb(60, 168, 196), rgb(50, 128, 180));
-    transition: 0.3s;
+    transition: 0.2s;
     border-radius: 5px;
     color: black;
-    border-bottom: 2px groove crimson;
-    padding: 2%;
+    border-bottom: 3px groove rgb(168, 8, 8);
+    padding: 1%;
 }
