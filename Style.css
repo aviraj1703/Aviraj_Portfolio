@@ -16,7 +16,6 @@ body{
     flex-wrap: wrap;
     background-color : #1A1A2E;
 }
-
 /* picture and background */
 .picture{
     border-radius: 50%;
@@ -28,7 +27,6 @@ body{
     justify-content: center;
     align-items: center;
 }
-
 /* Name */
 #Name{
     text-align: center;
@@ -56,15 +54,16 @@ body{
     font-weight: bold;
     text-decoration: none;
     color: cornsilk;
+    padding: 1%;
 }
 .font1:hover{
     background-image: linear-gradient(to left,red, brown);
     opacity: 70%;
     transition: 0.2s;
-    border-radius: 10px;
+    border-radius: 30px;
     border-bottom: 3px double cornsilk;
-    color: greenyellow;
-    padding: 0% 0.2% 0% 0%;
+    color: rgb(64, 241, 87);
+    padding: 0.5% 1%;
 }
 
 /* About me */
@@ -82,10 +81,10 @@ body{
     font-size: 15rem;
     color: brown;
     text-align: center;
-    padding: 1%;
+    padding: 2%;
 }
 .Me{
-    background-color: rgb(47, 173, 58);
+    background-color: rgb(20, 94, 26);
     width: 50rem;
     height: fit-content;
     border-radius: 20px;
@@ -100,7 +99,7 @@ body{
     font-size: 19px;
     font-family: 'Uchen', serif;
     font-weight:500;
-    color: gainsboro;
+    color: lavender;
 }
 
 /* Skills */
@@ -118,7 +117,7 @@ body{
     font-size: 15rem;
     color: gray;
     text-align: center;
-    padding: 1%;
+    padding: 2%;
 }
 .sk{
     background-color: rgb(85, 36, 114);
@@ -126,17 +125,6 @@ body{
     height: fit-content;
     border-radius: 20px;
     margin-top: 1%;
-}
-.font3{
-    padding: 2% 1% 2% 3%;
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-    text-align: left;
-    font-size: 19px;
-    font-family: 'Uchen', serif;
-    font-weight:500;
-    color: lavender;
 }
 
 /* Experience */
@@ -148,13 +136,12 @@ body{
     justify-content: space-around;
     align-content: center;
     flex-wrap: wrap;
-    border-bottom: 1px groove rgb(32, 76, 151);
 }
 #Experience i{
     font-size: 15rem;
     color: rgba(250, 205, 7, 0.877);
     text-align: center;
-    padding: 1%;
+    padding: 2%;
 }
 .exp{
     background-color: rgb(133, 10, 20);
@@ -162,17 +149,6 @@ body{
     height: fit-content;
     border-radius: 20px;
     margin-top: 1%;
-}
-.font4{
-    padding: 2% 1% 2% 3%;
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-    text-align: left;
-    font-size: 19px;
-    font-family: 'Uchen', serif;
-    font-weight:500;
-    color: lavender;
 }
 
 /* Let's get connected */
@@ -184,6 +160,7 @@ body{
     font-family: 'Dancing Script', cursive;
     font-size: 40px;
     font-weight: bold;
+    text-align: center;
     color: rgba(121, 3, 3, 0.993);
     letter-spacing: 2px;
     height: fit-content;
@@ -210,5 +187,4 @@ body{
     border-radius: 5px;
     color: black;
     border-bottom: 3px groove rgb(168, 8, 8);
-    padding: 1%;
 }
