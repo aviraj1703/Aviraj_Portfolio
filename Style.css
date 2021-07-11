@@ -19,7 +19,7 @@ body{
 /* picture and background */
 .picture{
     border-radius: 50%;
-    border-color: blue;
+    border-color: rgb(255, 217, 0);
     border-style: dashed;
 }
 .pic{
@@ -46,7 +46,7 @@ body{
    flex-wrap: wrap;
    height: fit-content;
    padding: 2%;
-   background-color: #16213E;
+   background-color : #1f1f3a;/* background-color: #16213E; */
 }
 .font1{
     font-family: 'Courier New';
@@ -54,16 +54,14 @@ body{
     font-weight: bold;
     text-decoration: none;
     color: cornsilk;
-    padding: 1%;
+    padding: 0.5%;
+    border-radius: 30px;
+    transition: 0.5s;
 }
 .font1:hover{
     background-image: linear-gradient(to left,red, brown);
     opacity: 70%;
-    transition: 0.2s;
-    border-radius: 30px;
-    border-bottom: 3px double cornsilk;
-    color: rgb(64, 241, 87);
-    padding: 0.5% 1%;
+    color: rgb(25, 252, 55);
 }
 
 /* About me */
@@ -76,6 +74,7 @@ body{
     align-content: center;
     flex-wrap: wrap;
     border-bottom: 1px groove rgb(32, 76, 151);
+    background-color: #16213E;
 }
 #About i{
     font-size: 15rem;
@@ -126,6 +125,9 @@ body{
     border-radius: 20px;
     margin-top: 1%;
 }
+#small{
+    display: none;
+}
 
 /* Experience */
 #Experience{
@@ -136,6 +138,7 @@ body{
     justify-content: space-around;
     align-content: center;
     flex-wrap: wrap;
+    background-color: #16213E;
 }
 #Experience i{
     font-size: 15rem;
@@ -153,7 +156,7 @@ body{
 
 /* Let's get connected */
 #footer1{
-    background-color: #E94560;
+    /* background-color: #E94560; */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -161,7 +164,7 @@ body{
     font-size: 40px;
     font-weight: bold;
     text-align: center;
-    color: rgba(121, 3, 3, 0.993);
+    color: rgba(15, 196, 60, 0.993);
     letter-spacing: 2px;
     height: fit-content;
     padding: 2%;
@@ -169,7 +172,7 @@ body{
 
 /* Icons */
 #footer2{
-    background-color: #E94560;
+    /* background-color: #E94560; */
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -180,11 +183,46 @@ body{
 #footer2 i{
     font-size: 40px; 
     color: whitesmoke;
+    transition: 0.5s;
 }
 #footer2 i:hover{
-    background-image: linear-gradient(to left,rgb(60, 168, 196), rgb(50, 128, 180));
-    transition: 0.2s;
     border-radius: 5px;
     color: black;
-    border-bottom: 3px groove rgb(168, 8, 8);
+}
+
+@media only screen and (max-width: 500px) {
+#Navigator{
+    display: flex;
+    flex-direction: column;
+}
+.pic img{
+    width: 200px;
+    height: 200px;
+}
+#Skills i, #About i, #Experience i {
+    font-size: 9rem;
+    margin-top: 10vh;
+}
+#Experience .exp{
+    margin-bottom: 10vh;
+}
+#Name{
+    font-size: 2rem;
+    margin: 1.5vh 0;
+}
+#footer1{
+    font-size: 1.5rem;
+}
+#footer2 i{
+    font-size: 2rem;
+}
+}
+@media only screen and (max-width: 1150px) {
+.large{
+    display: none;
+}
+#small{
+    display: flex;
+    font-size: 2rem;
+}
 }
