@@ -201,10 +201,10 @@ body{
 }
 #Skills i, #About i, #Experience i {
     font-size: 9rem;
-    margin-top: 10vh;
+    margin-top: 5vh;
 }
-#Experience .exp{
-    margin-bottom: 10vh;
+#Skills .sk, #About .Me, #Experience .exp{
+    margin-bottom: 5vh;
 }
 #Name{
     font-size: 2rem;
@@ -218,7 +218,7 @@ body{
 }
 }
 @media only screen and (max-width: 1150px) {
-.large{
+#large{
     display: none;
 }
 #small{
