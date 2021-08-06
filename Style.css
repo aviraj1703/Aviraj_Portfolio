@@ -5,6 +5,20 @@
 body{
     background-color: #0F3460;
 }
+::-webkit-scrollbar{
+    background-color: transparent;
+    border-radius: 20px;
+    width: 0.5vw;
+}
+::-webkit-scrollbar-button{
+    background-color: transparent;
+    border-radius: 20px;
+    cursor: pointer !important;
+}
+::-webkit-scrollbar-thumb{
+    background-image: linear-gradient(rgb(255, 102, 0), rgba(250, 250, 250, 0.979), rgb(12, 156, 60));
+    border-radius: 20px;
+}
 
 /* Details Navigator */
 #Navigator{
@@ -146,20 +160,6 @@ body{
     border-radius: 20px;
     margin-top: 1%;
     overflow: hidden scroll;
-}
-::-webkit-scrollbar{
-    background-color: transparent;
-    border-radius: 20px;
-    width: 0.5vw;
-}
-::-webkit-scrollbar-button{
-    background-color: transparent;
-    border-radius: 20px;
-    cursor: pointer !important;
-}
-::-webkit-scrollbar-thumb{
-    background-image: linear-gradient(rgb(255, 102, 0), rgba(250, 250, 250, 0.979), rgb(12, 156, 60));
-    border-radius: 20px;
 }
 #small{
     display: none;
@@ -351,4 +351,19 @@ body{
     display: flex;
     font-size: 2rem;
 }
+::-webkit-scrollbar{
+    background-color: transparent;
+    border-radius: 20px;
+    width: 0.5vw;
 }
+::-webkit-scrollbar-button{
+    background-color: transparent;
+    border-radius: 20px;
+    cursor: pointer !important;
+}
+::-webkit-scrollbar-thumb{
+    background-image: linear-gradient(rgb(255, 102, 0), rgba(250, 250, 250, 0.979), rgb(12, 156, 60));
+    border-radius: 20px;
+}
+}
+
