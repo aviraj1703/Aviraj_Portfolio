@@ -5,49 +5,57 @@
 body{
     background-color: #0F3460;
 }
-::-webkit-scrollbar{
-    background-color: transparent;
-    border-radius: 20px;
-    width: 0.5vw;
-}
-::-webkit-scrollbar-button{
-    background-color: transparent;
-    border-radius: 20px;
-    cursor: pointer !important;
-}
-::-webkit-scrollbar-thumb{
-    background-image: linear-gradient(rgb(255, 102, 0), rgba(250, 250, 250, 0.979), rgb(12, 156, 60));
-    border-radius: 20px;
-}
 
 /* Details Navigator */
 #Navigator{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
     height: auto;
-    padding: 1%;
+    padding: 1% 0%;
     background-color : #0b0b1f;
+    /* background-color : #e4e4f1; */
     position: sticky;
     top: 0;
     z-index: 1;
  }
+ .logo{
+    margin-left: 5%;
+    padding: 0.5%;
+    width: auto;
+    background-color: honeydew;
+    border-radius: 50%;
+ }
+ .logo img{
+    height: 30px;
+    width: 30px;
+ }
+ .nav{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 50%;
+    align-items: flex-end;
+    right: 0%;
+ }
  .font1{
     font-family: 'Courier New';
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
     text-decoration: none;
     color: cornsilk;
-    padding: 0.5%;
-    border-radius: 30px;
+    padding: 1%;
+    border-radius: 10px;
     transition: 0.5s;
+    border-bottom: 0.2px solid #1d1d57;
  }
  .font1:hover{
     background-color: wheat;
     color: crimson;
     font-weight: bold;
  }
+
 
 /* Header */
 .Header{
@@ -85,6 +93,7 @@ body{
     position: relative;
     animation: Name 2s ease-in-out 0.5ms infinite;
     transition: all 2s ease-in-out;
+    text-shadow: 1px 1px 2px brown;
 }
 @keyframes Name {
     0%{
@@ -115,13 +124,15 @@ body{
     color: brown;
     text-align: center;
     padding: 2%;
+    text-shadow: 1.5px 1.5px 2px coral;
 }
 .Me{
     background-color: rgb(20, 94, 26);
     width: 50rem;
     height: fit-content;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-top: 1%;
+    box-shadow: -1px -1px 3px 2px rgb(37, 150, 47);
 }
 .font2{
     padding: 2% 1% 2% 3%;
@@ -153,19 +164,82 @@ body{
     text-align: center;
     padding: 2%;
 }
+#Skills #small, #Skills #large{
+    text-shadow: -1.5px -1.5px 2px rgb(236, 232, 232);
+}
+#Skills button{
+    background-color: transparent;
+    border: none;
+    transition: all 0.2s ease-in-out;
+}
+#Skills .arr_l i{
+    color: rgb(24, 19, 27);
+    font-size: 3.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-shadow: -1.5px -1.5px 2px rgb(236, 232, 232);
+    z-index: 0;
+}
+#Skills .arr_l i:hover{
+    transform: scale(0.9);
+}
 .sk{
     background-color: rgb(85, 36, 114);
     width: 40rem;
-    height: 12.5rem;
+    height: 12rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 1px 1px 3px 2px rgb(157, 51, 218);
+}
+#Skills .sk #scroll{
+    height: 41.8rem;
+    background-color: transparent;
+}
+#Skills .arr_r i{
+    color: rgb(24, 19, 27);
+    font-size: 3.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-shadow: -1.5px -1.5px 2px rgb(236, 232, 232);
+    z-index: 0;
+}
+#Skills .arr_r i:hover{
+    transform: scale(0.9);
+}
+::-webkit-scrollbar-corner{
+    background-color: transparent;
+    display: none;
+}
+::-webkit-scrollbar{
+    background-color:transparent;
     border-radius: 20px;
-    margin-top: 1%;
-    overflow: hidden scroll;
+    width: 0.5vw;
+}
+::-webkit-scrollbar-thumb{
+    background-image: linear-gradient(rgb(255, 102, 0), rgba(250, 250, 250, 0.979), rgb(12, 156, 60));
+    border-radius: 50px;
 }
 #small{
     display: none;
 }
 #Skills .sk .font2{
     display: inline;
+}
+#Skills .sk .font2 i{
+    color: whitesmoke;
+    text-align: center;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #Skills .sk .font2 .info{
     display: flex;
@@ -267,13 +341,15 @@ body{
     color: rgba(250, 205, 7, 0.877);
     text-align: center;
     padding: 2%;
+    text-shadow: 1.5px 1.5px 2px rgb(22, 191, 221);
 }
 .exp{
     background-color: rgb(133, 10, 20);
     width: 40rem;
     height: fit-content;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-top: 1%;
+    box-shadow: -1px -1px 3px 2px rgb(212, 45, 59);
 }
 
 /* Let's get connected */
@@ -286,10 +362,16 @@ body{
     font-size: 40px;
     font-weight: bold;
     text-align: center;
-    color: rgba(15, 196, 60, 0.993);
+    color: yellow;
     letter-spacing: 2px;
     height: fit-content;
     padding: 2%;
+}
+#footer1 span{
+    transition: 0.5s;
+}
+#footer1 span:hover{
+    color: rgba(15, 196, 60, 0.993);
 }
 
 /* Icons */
@@ -310,6 +392,7 @@ body{
 #footer2 i:hover{
     border-radius: 5px;
     color: black;
+    transform: scale(0.9);
 }
 
 @media only screen and (max-width: 500px) {
@@ -342,14 +425,33 @@ body{
 #footer2 i{
     font-size: 2rem;
 }
+::-webkit-scrollbar{
+    width: 3px;
 }
-
+}
 @media only screen and (max-width: 1150px) {
+.logo{
+    display: none;
+}
+#Navigator{
+    justify-content: flex-end;
+}
+.nav{
+    align-items: flex-end;
+    width: 60%;
+    justify-content: space-evenly;
+}
 #large{
     display: none;
 }
 #small{
     display: flex;
     font-size: 2rem;
+}
+.arr_l, .arr_r{
+    display: none;
+}
+.sk{
+    overflow-y: scroll;
 }
 }
