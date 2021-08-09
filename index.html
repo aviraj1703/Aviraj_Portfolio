@@ -12,17 +12,23 @@
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Uchen&display=swap');
 		</style>
+		<script src="script.js"></script>
 	</head>
 
 	<body>
 
 		<!-- Navigator -->
 		<div id="Navigator">
-			<a href="HTML/About.html" class="font1"> 👨‍🎓 About me </a>
-			<a href="HTML/Skills.html" class="font1"> ⚙ Skills </a>
-			<a href="HTML/Experience.html" class="font1"> 🎯 Experience </a>
-			<a href="https://drive.google.com/file/d/1p_G6hp8nVpUppy-PS7H7XruRsjcEy6KU/view?usp=sharing" target="_blank"
-				class="font1"> 📑 Resume </a>
+			<div class="logo">
+				<img src="A.png" alt="">
+			</div>
+			<div class="nav">
+				<a href="HTML/About.html" class="font1"> 👨‍🎓 About me </a>
+				<a href="HTML/Skills.html" class="font1"> ⚙ Skills </a>
+				<a href="HTML/Experience.html" class="font1"> 🎯 Experience </a>
+				<a href="https://drive.google.com/file/d/1p_G6hp8nVpUppy-PS7H7XruRsjcEy6KU/view?usp=sharing"
+					target="_blank" class="font1"> 📑 Resume </a>
+			</div>
 		</div>
 
 		<div class="Header">
@@ -53,45 +59,67 @@
 
 		<!-- Skills -->
 		<div id="Skills">
+
 			<i id="small" class="fas fa-cogs"></i>
+
+			<button class="arr_l" onclick="Translate_L()">
+				<i class="fas fa-angle-double-left"></i>
+			</button>
+
 			<div class="sk">
-				<span class="font2">
-					<div class="info">
-						<span>HTML</span>
-						<span>80%</span>
-					</div>
-					<div class="line">
-						<div class="html"></div>
-					</div>
-				</span>
-				<span class="font2">
-					<div class="info">
-						<span>CSS</span>
-						<span>60%</span>
-					</div>
-					<div class="line">
-						<div class="css"></div>
-					</div>
-				</span>
-				<span class="font2">
-					<div class="info">
-						<span>JAVASCRIPT</span>
-						<span>50%</span>
-					</div>
-					<div class="line">
-						<div class="js"></div>
-					</div>
-				</span>
-				<span class="font2">
-					<div class="info">
-						<span>PYTHON</span>
-						<span>40%</span>
-					</div>
-					<div class="line">
-						<div class="py"></div>
-					</div>
-				</span>
+
+				<div id="scroll">
+
+					<span class="font2">
+						<i class="fas fa-code"></i>
+						<div class="info">
+							<span>HTML</span>
+							<span>80%</span>
+						</div>
+						<div class="line">
+							<div class="html"></div>
+						</div>
+					</span>
+
+					<span class="font2">
+						<i class="fab fa-css3-alt"></i>
+						<div class="info">
+							<span>CSS</span>
+							<span>60%</span>
+						</div>
+						<div class="line">
+							<div class="css"></div>
+						</div>
+					</span>
+
+					<span class="font2">
+						<i class="fab fa-js-square"></i>
+						<div class="info">
+							<span>JAVASCRIPT</span>
+							<span>50%</span>
+						</div>
+						<div class="line">
+							<div class="js"></div>
+						</div>
+					</span>
+
+					<span class="font2">
+						<i class="fab fa-python"></i>
+						<div class="info">
+							<span>PYTHON</span>
+							<span>40%</span>
+						</div>
+						<div class="line">
+							<div class="py"></div>
+						</div>
+					</span>
+				</div>
 			</div>
+
+			<button class="arr_r" onclick="Translate_R()">
+				<i class="fas fa-angle-double-right"></i>
+			</button>
+
 			<i id="large" class="fas fa-cogs"></i>
 		</div>
 
@@ -110,7 +138,7 @@
 
 		<!-- Footer -->
 		<div id="footer1">
-			🤍 Let's get connected..! 🤍
+			<span>🤍 Let's get connected..! 🤍</span>
 		</div>
 		<div id="footer2"><br /><br /><br /><br />
 			<a href="https://www.linkedin.com/in/avirajsinh-rathod-41a4321a2" target="_blank">
