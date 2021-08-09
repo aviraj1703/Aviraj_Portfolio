@@ -6,6 +6,7 @@ const Translate_L = () => {
     let left = document.getElementById('scroll');
     left.style.transform = `translateY(${counter + 10}rem)`;
     counter = counter + 10;
+    console.log(counter);
 }
 const Translate_R = () => {
     if (counter < -20) {
@@ -14,4 +15,5 @@ const Translate_R = () => {
     let right = document.getElementById('scroll');
     right.style.transform = `translateY(${counter - 10}rem)`;
     counter = counter - 10;
+    console.log(counter);
 }
