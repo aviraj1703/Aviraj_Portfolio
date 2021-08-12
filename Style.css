@@ -4,7 +4,77 @@
 }
 body{
     background-color: #0F3460;
+    /* background-color: #acb2bb; */
 }
+::-webkit-scrollbar-corner{
+    background-color: transparent;
+    display: none;
+}
+::-webkit-scrollbar{
+    background-color:transparent;
+    border-radius: 20px;
+    width: 0.5vw;
+}
+::-webkit-scrollbar-thumb{
+    background-image: linear-gradient(rgb(255, 102, 0), rgba(250, 250, 250, 0.979), rgb(12, 156, 60));
+    border-radius: 50px;
+}
+
+/* Hamburger */
+#hamburger{
+    height: 1.8rem;
+    overflow: hidden;
+    padding: 0.5% 0%;
+    background-color : #0b0b1f;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: none;
+ }
+ #hamburger .fa-bars{
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 1%;
+ }
+ #hamburger .fa-bars:hover{
+    color: crimson;
+ }
+ #hamburger .fa-times-circle{
+    color: crimson;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 1%;
+ }
+ #hamburger .fa-times-circle:hover{
+    color: white;
+ }
+ #hamburger .content{
+    border-left: 1px solid #333349 ;
+    margin: 0.5%;
+ }
+ #hamburger .content ul li{
+    width: 23vw;
+    padding: 1%;
+    border-top: 1px solid #333349;
+    margin: 0.1%;
+    transition: all 1s ease-in-out;
+ }
+ #hamburger .content ul li:hover{
+    animation: hover 0.5s ease-out 0.5ms 1;
+ }
+ #hamburger .content ul li:first-child{
+    border-top: none;
+ }
+ #hamburger .content ul li .font1{
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 1%;
+ }
+ 
+ #hamburger .content ul li .font1:hover{
+    color: rgb(211, 119, 14);
+ }
 
 /* Details Navigator */
 #Navigator{
@@ -13,9 +83,8 @@ body{
     justify-content: space-between;
     flex-wrap: wrap;
     height: auto;
-    padding: 1% 0%;
+    padding: 0.5% 0%;
     background-color : #0b0b1f;
-    /* background-color : #e4e4f1; */
     position: sticky;
     top: 0;
     z-index: 1;
@@ -30,32 +99,65 @@ body{
  .logo img{
     height: 30px;
     width: 30px;
+    transition: all 1s ease-in-out;
+ }
+ .logo:hover{
+    transform: scale(1.1);
  }
  .nav{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 50%;
-    align-items: flex-end;
+    display: block;
+    width: 60%;
     right: 0%;
+    margin: 0%;
+    padding-right: 0%;
+    justify-content: flex-end;
+ }
+ .nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin: 0%;
+ }
+ .nav li{
+    list-style: none;
+    padding: 0% 2% ;
+    margin: 0.05%;
+    border-right: 1px solid rgb(42, 42, 46);
+    border-left: 1px solid rgb(145, 115, 115);
+ }
+ .nav li:first-child{
+    border-left: none;
+ }
+ .nav li:last-child{
+    border-right: none;
+ }
+ .nav ul li:hover{
+    animation: hover 0.5s ease-out 0.5ms 1;
+    border-color: transparent;
+ }
+ @keyframes hover {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0.9);
+    }
  }
  .font1{
-    font-family: 'Courier New';
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: bold;
     text-decoration: none;
     color: cornsilk;
-    padding: 1%;
+    transition: all 0.5s ease-in-out;
     border-radius: 10px;
     transition: 0.5s;
-    border-bottom: 0.2px solid #1d1d57;
  }
- .font1:hover{
-    background-color: wheat;
-    color: crimson;
-    font-weight: bold;
+ .font1:hover, .active{
+    color: rgb(211, 119, 14);
  }
-
 
 /* Header */
 .Header{
@@ -213,19 +315,6 @@ body{
 }
 #Skills .arr_r i:hover{
     transform: scale(0.9);
-}
-::-webkit-scrollbar-corner{
-    background-color: transparent;
-    display: none;
-}
-::-webkit-scrollbar{
-    background-color:transparent;
-    border-radius: 20px;
-    width: 0.5vw;
-}
-::-webkit-scrollbar-thumb{
-    background-image: linear-gradient(rgb(255, 102, 0), rgba(250, 250, 250, 0.979), rgb(12, 156, 60));
-    border-radius: 50px;
 }
 #small{
     display: none;
@@ -396,9 +485,25 @@ body{
 }
 
 @media only screen and (max-width: 500px) {
-#Navigator{
+#hamburger{
     display: flex;
     flex-direction: column;
+    padding: 1%;
+}
+.btn .lst{
+    display: none;
+    position: relative;
+    left: 25%;
+}
+.content{
+    position: relative;
+    padding: 2%;
+}
+.content ul li{
+    list-style: none;
+}
+#Navigator{
+    display: none;
 }
 .pic img{
     width: 200px;
