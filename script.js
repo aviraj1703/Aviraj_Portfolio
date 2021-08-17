@@ -38,3 +38,20 @@ const menubar = () =>{
         clk--;
     }
 }
+
+let cnt = 0;
+const alertt = () => {
+    let loading = document.getElementById('loading');
+    let body = document.getElementsByTagName("body")[0];
+    if(cnt == 1){
+        loading.style.display = `none`;
+        body.style.overflow = `scroll`;
+        clearInterval('id');
+        return;
+    }
+    cnt++;
+}
+
+const load = () => {
+    let id = setInterval(alertt, 2000);
+}
