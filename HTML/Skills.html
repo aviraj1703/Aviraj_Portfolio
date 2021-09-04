@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <link rel="icon" href="../A.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Uchen&display=swap');
+
+        * {
+            margin: 0% 0%;
+            padding: 0% 0%;
+        }
+
+        body {
+            background: rgb(5, 20, 48);
+        }
+
+        /* Hamburger */
+        #hamburger{
+            display: none;
+        }
+        #hamburger .fa-bars{
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 1%;
+        }
+        #hamburger .fa-bars:hover{
+            color: crimson;
+        }
+        #hamburger .fa-times-circle{
+            color: crimson;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 1%;
+        }
+        #hamburger .fa-times-circle:hover{
+            color: white;
+        }
+        #hamburger .content{
+            margin: 2%;
+            position: relative;
+            padding: 2%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .btn .fst{
+            width: 2rem;
+            right: 85%;
+        }
+        .btn .lst{
+            display: none;
+            position: relative;
+            left: 85%;
+            width: 2rem;
+        }
+        .content ul{
+            border-left: 1px solid #333349 ;
+            padding: 4%;
+            padding-left: 0%;
+        }
+        #hamburger .content ul li{
+            width: 52vw;
+            border-top: 1px solid #333349;
+            transition: all 1s ease-in-out;
+            list-style: none;
+            margin: 2%;
+            padding: 4%;
+        }
+        #hamburger .content ul li:hover{
+            animation: hover 0.5s ease-out 0.5ms 1;
+        }
+        #hamburger .content ul li:first-child{
+            border-top: none;
+        }
+        #hamburger .content ul li .font1{
+            font-size: 2.5rem;
+            font-weight: normal;
+            padding: 1%;
+        }
+        
+        #hamburger .content ul li .font1:hover{
+            color: rgb(211, 119, 14);
+        }
+
+        /* Details Navigator */
+        #Navigator {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            height: auto;
+            padding: 0.5% 0%;
+            background-color: #0b0b1f;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .logo {
+            margin-left: 5%;
+            padding: 0.5%;
+            width: auto;
+            background-color: honeydew;
+            border-radius: 50%;
+        }
+
+        .logo img {
+            height: 30px;
+            width: 30px;
+            transition: all 1s ease-in-out;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .nav {
+            display: block;
+            width: 60%;
+            right: 0%;
+            margin: 0%;
+            padding-right: 0%;
+            justify-content: flex-end;
+        }
+
+        .nav ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            margin: 0%;
+        }
+
+        .nav li {
+            list-style: none;
+            padding: 0% 2%;
+            margin: 0.05%;
+            border-right: 1px solid rgb(42, 42, 46);
+            border-left: 1px solid rgb(145, 115, 115);
+        }
+
+        .nav li:first-child {
+            border-left: none;
+        }
+
+        .nav li:last-child {
+            border-right: none;
+        }
+
+        .nav ul li:hover {
+            animation: hover 0.5s ease-out 0.5ms 1;
+            border-color: transparent;
+        }
+
+        @keyframes hover {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(0.9);
+            }
+        }
+
+        .font1 {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            color: cornsilk;
+            transition: all 0.5s ease-in-out;
+            border-radius: 10px;
+            transition: 0.5s;
+        }
+
+        .font1:hover,
+        .active {
+            color: rgb(211, 119, 14);
+        }
+
+        #Skills {
+            height: fit-content;
+            padding: 2%;
+            margin: 2%;
+            display: flex;
+            justify-content: space-around;
+            align-content: center;
+            flex-wrap: wrap;
+            background-color: #16213E;
+            border-radius: 20px;
+        }
+
+        #Skills i {
+            font-size: 20rem;
+            color: gray;
+            text-align: center;
+            padding: 2%;
+        }
+
+        .sk {
+            background-color: rgb(85, 36, 114);
+            width: 30rem;
+            height: fit-content;
+            border-radius: 20px;
+            margin-top: 1%;
+        }
+
+        .font3 {
+            padding: 2% 1% 2% 3%;
+            display: flex;
+            justify-content: space-around;
+            align-content: center;
+            text-align: left;
+            font-size: 19px;
+            font-family: 'Uchen', serif;
+            font-weight: 500;
+            color: lavender;
+        }
+
+        @media only screen and (max-width: 500px) {
+            #hamburger{
+                display: flex;
+                flex-direction: column;
+                padding: 2.5%;
+                height: 2rem;
+                overflow: hidden;
+                background-color : #0b0b1f;
+                position: sticky;
+                top: 0;
+                z-index: 2;
+            }
+
+            #Navigator {
+                display: none;
+            }
+
+            #Skills i {
+                font-size: 9rem;
+                margin-top: 5vh;
+            }
+
+            #Skills .sk {
+                margin-bottom: 5vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hamburger -->
+    <div id="hamburger">
+        <div class="btn">
+            <i class="fas fa-bars fst" onclick="menubar()"></i>
+            <i class="far fa-times-circle lst" onclick="menubar()"></i>
+        </div>
+        <div class="content">
+            <ul>
+                <li><a href="../index.html" class="font1"> Home </a></li>
+                <li><a href="About.html" class="font1"> About </a></li>
+                <li><a href="Experience.html" class="font1"> Experience </a></li>
+                <li><a href="https://drive.google.com/file/d/1p_G6hp8nVpUppy-PS7H7XruRsjcEy6KU/view?usp=sharing"
+                        target="_blank" class="font1"> Resume </a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Navigator -->
+    <div id="Navigator">
+        <div class="logo">
+            <img src="../A.png">
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="../index.html" class="font1"> Home </a></li>
+                <li><a href="About.html" class="font1"> About </a></li>
+                <li><a href="#" class="font1 active"> Skills </a></li>
+                <li><a href="Experience.html" class="font1"> Experience </a></li>
+                <li><a href="https://drive.google.com/file/d/1p_G6hp8nVpUppy-PS7H7XruRsjcEy6KU/view?usp=sharing"
+                        target="_blank" class="font1"> Resume </a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="Skills">
+        <i class="fas fa-cogs"></i>
+        <span class="sk">
+            <span class="font3">
+                ✍🏼 C, C++ ⭐⭐⭐<br />
+                ✍🏼 PYTHON ⭐⭐<br />
+                ✍🏼 HTML, CSS, JAVA-SCRIPT ⭐⭐⭐<br />
+                ✍🏼 MATLAB ⭐⭐<br />
+                ✍🏼 Matrix ⭐⭐⭐⭐<br />
+                ✍🏼 Electrical Machines ⭐⭐⭐⭐<br />
+                ✍🏼 Power System ⭐⭐⭐<br />
+                ✍🏼 Designing Posters ⭐⭐⭐<br /><br />
+                ⁜ Other skills <br />
+                ✍🏼 Team work <br />
+                ✍🏼 Leadership <br />
+                ✍🏼 Communication <br />
+            </span>
+        </span>
+    </div>
+    
+    <script src="https://kit.fontawesome.com/187a3519f6.js" crossorigin="anonymous"></script>
+    <script src="Script.js"></script>
+
+</body>
+
+</html>
