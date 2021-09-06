@@ -6,7 +6,7 @@ const menubar = () =>{
     let btn2 = document.getElementsByClassName('lst')[0];
     let body = document.getElementsByTagName("body")[0];
     if(clk == 0){
-        btn.style.height = `${50}rem`;
+        btn.style.height = `${150}vh`;
         btn1.style.display = `none`;
         btn2.style.display = `block`;
         body.style.overflow = `hidden`;
