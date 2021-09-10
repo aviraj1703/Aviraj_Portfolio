@@ -43,7 +43,7 @@ body{
     align-items: center;
     position: relative;
     transform-style: preserve-3d;
-    perspective: 000px;
+    perspective: 1000px;
     animation: cub 2s ease 0ms infinite alternate;
     transition: all 1s ease;
 }
