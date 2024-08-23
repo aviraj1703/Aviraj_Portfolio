@@ -1,0 +1,17 @@
+---------------------------------------------------------------------------------Whispers-------------------------------------------------------------------------------
+
+Whispers is a static code analysis tool designed for parsing various common data formats in search of hardcoded credentials and dangerous functions.
+
+CLI suppoerted: YES
+CI/CD supported: YES
+
+GitHub Link: https://github.com/Skyscanner/whispers
+
+Installation:
+
+pip3 install whispers
+
+git clone https://github.com/Skyscanner/whispers
+cd whispers
+make install
+

@@ -1,0 +1,59 @@
+----------------------------------------------------------------------SNYK tool information----------------------------------------------------------------------
+INTRODUCTION:
+
+	Snyk is a developer-first security platform that helps identify, prioritize, and fix vulnerabilities in open-source dependencies and containerized applications. 
+The platform integrates with the software development lifecycle (SDLC) to provide continuous security monitoring and remediation, 
+enabling organizations to build and maintain secure applications. 
+Snyk supports multiple programming languages, package managers, and cloud-native technologies.
+
+KEY FEATURES:
+
+1. Early Vulnerability Detection
+2. Continuous Monitoring
+3. Integration with Development Workflow
+4. Container Security
+5. Developer-Focused Approach
+6. Multi-Language Support
+
+----------------------------------------------------------------------SNYK tool information----------------------------------------------------------------------
+
+------------------------------------------------------------------------SNYK tool usecases-----------------------------------------------------------------------
+
+Dependency Scanning
+Container Security
+Security Misconfigurations: Cookie set without HttpOnly flag, Cookie set without secure flag, Incomplete or no cache-control and pragma HTTPHeader set, 
+			    X-Frame-Options header correct, X-Frame-Options header not set, X-Content-Type-Options header missing, 
+			    Content Security Policy (CSP) Header Not Set, and others.
+Static Analysis
+License Compliance
+Continuous Monitoring
+
+------------------------------------------------------------------------SNYK tool usecases-----------------------------------------------------------------------
+
+-------------------------------------------------------------------------Using SNYK tool-------------------------------------------------------------------------
+
+-- Create an account on snyk.
+
+-- Install "node.js" and using npm install snyk globally.
+
+-- Run "snyk auth" after installing to authenticate snyk account in terminal.
+-- Aunthenticate it to configure snyk cli.
+
+-- Commands for scanning...
+   1. snyk test - It scans whole project and gives vulnerabilities details.
+   2. snyk monitor - It scans project and uploads snapshot to snyk UI and also provides url.
+                   - We can see dependency tree here.
+   		   - We can also check vulnerabilities.
+   3. snyk iac test ./templatePath - To test particular template.
+				   - iac means infrastructure as code.
+
+-- To check docker images...
+   --> Snyk advisor website is there for checking docker images.
+   --> We can check particular docker image using this website.
+   --> It checks for docker image and finds if any vulnerability is there and also provides better image for project.
+
+-- Linking repo to snyk.
+   1. Create snyk account with GitHub/GitLab and add any project you want to monitor.
+   2. In this method it checks for all vulnerabilities in project.
+   3. Then there's "Fix vulnerabilities" button on clicking it'll create a PR and then click on "Open a Fix PR" button.
+   4. It'll redirect to repository and will show PR details for fixes.

@@ -1,0 +1,29 @@
+---------------------------------------------------------------------------------Gitleaks------------------------------------------------------------------------------
+
+What is Gitleaks?
+	Gitleaks is a SAST(Static Application Security Testing) tool for detecting and preventing hardcoded secrets like passwords, api keys, and tokens in git repos. 
+Gitleaks is an easy-to-use, all-in-one solution for detecting secrets, past or present, in your code.
+
+Gitleaks features:
+- Scan for commited secrets
+- Scan for unstaged secrets to shift security left
+- Scan directories and files
+- Run Gitleaks actions in CI/CD
+- Custom rules via toml configuration
+- Increased performance using go-git
+- json, sarif and csv reporting
+- Private repo scans using key or password based authentication
+
+Repo URL: https://github.com/gitleaks/gitleaks
+	
+Installing on Linux:
+	Download gitleaks_8.18.2_linux_arm64.tar.gz from https://github.com/gitleaks/gitleaks/releases/download/v8.18.2/gitleaks_8.18.2_linux_arm64.tar.gz
+	tar –xvzf gitleaks_8.18.2_linux_arm64.tar.gz
+	sudo chmod +x gitleaks
+	sudo mv gitleaks /usr/bin/
+	gitleaks --help // To check all available commands
+
+Scanning repo:
+	cd repo
+	gitleaks detect  # Scan only
+	gitleaks detect --report-path gitleaks-report.json  # Scan and report

@@ -1,0 +1,11 @@
+Amazon GuardDuty is a threat detection service.
+	- Continuous monitoring
+	- Compromised accounts
+	- Anomalous behavior
+
+GuardDuty uses machine learning anomaly detection, malware scanning.
+
+Use cases:
+	- Improve security operations visibility
+	- Protect against ransomware and other types of malware
+	- Assist analysts in investigations and automate remediation

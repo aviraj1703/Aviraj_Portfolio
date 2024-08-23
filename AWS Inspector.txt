@@ -1,0 +1,88 @@
+----------------------------------------------------------------------What is Amazon Inspector?------------------------------------------------------------------------
+	
+	Amazon Inspector is a vulnerability management service that continuously scans your AWS workloads for software vulnerabilities 
+and unintended network exposure. Amazon Inspector automatically discovers and scans running Amazon EC2 instances, container images in 
+Amazon Elastic Container Registry (Amazon ECR), and AWS Lambda functions for known software vulnerabilities and unintended network exposure.
+
+	Amazon Inspector can be activated for entire organization with a single click.
+
+-----------------------------------------------------------------------------Why it is needed?-------------------------------------------------------------------------
+
+Amazon Inspector provides comprehensive vulnerability assessments for your AWS resources, 
+helping you identify security issues such as misconfigurations, software vulnerabilities, and unintended exposures.
+
+It evaluates your AWS environment against security best practices and predefined rulesets, 
+providing recommendations to improve your security posture and reduce the risk of security breaches.
+
+Seamless integration with various AWS services, including EC2, ECS, Lambda, S3, and more, allowing you to assess the security of a wide range of AWS resources.
+
+Flexibility in customizing assessment templates and rules packages to meet the specific security requirements of your applications and workloads.
+
+Amazon Inspector has minimal impact on the performance of your fleet.
+
+pay-as-you-go pricing model, Amazon Inspector offers cost-effective security assessments without the need for upfront investments in hardware or software.
+
+Integration with Jenkins to automate security assessments as part of your continuous integration and continuous deployment (CI/CD) pipelines.
+
+-------------------------------------------------------------------------------Activation------------------------------------------------------------------------------
+
+Role: AWSServiceRoleforAmazonInspector
+Permissions: EC2, Elastic load balancer, Network firewall, codeguru, lamda scanning, ECR scanning, IAM roles
+
+Activation is customizable
+
+--------------------------------------------------------------------------------Work flow------------------------------------------------------------------------------
+
+Findings by
+- Vulnerabilities(Resources)
+- EC2 scanning
+- Container Image/Repositories
+- Lambda functions
+
+
+___________EC2___________
+
+Agent based scanning: - Need to cinfigure SSM agent
+		      - For finding CVEs
+Agentless scanning: - EBS snapshots to collect a software inventory from your instances.
+		    - Instances scanned using the agentless method are scanned for both operating system package, 
+		      and application programming language package vulnerabilities.
+
+For EC2 we need to assign SSM role to EC2 instance which we want to scan
+- Deep inspection for Linux instances
+	- Amazon Inspector collects updated application inventory from instances for deep inspection every 6 hours.
+
+- Scanning for windows instances: https://docs.aws.amazon.com/inspector/latest/user/windows-scanning.html
+
+To exclude from scanning add the tag: InspectorEc2Exclusion
+
+
+___________LAMBDA___________
+
+For lambda function scanning.
+- CodeGuru provides cwe code for all vulnerabilities (It's showing which type of vulnerability it is)
+	- e.g. Insecure_hashing, Logged credentials etc.
+- We can prevent lambda code scanning by providing some tags 
+	- Lambda function >> Configuration >> Tags >> Add tag/new tag >> key: inspectorExclusion, value: LambdaCodeScanning >> Save
+- We can prevent lambda standard scanning by providing some tags 
+	- Lambda function >> Configuration >> Tags >> Add tag/new tag >> key: inspectorExclusion, value: LambdaStandardScanning >> Save
+
+
+___________ECR___________
+
+Scans container images stored in ECR for software vulnerabilities to generate Package Vulnerability findings.
+After enabling continuous scanning, it detects all eligible images that you have pushed within 30 days, or pulled within the last 90 days.
+
+Supported operating systems and media types: 
+	"application/vnd.docker.distribution.manifest.v1+json"
+	"application/vnd.docker.distribution.manifest.v1+prettyjws"
+	"application/vnd.oci.image.manifest.v1+json"
+	"application/vnd.docker.distribution.manifest.v2+json"
+
+Note: Scratch images and DockerV2ListMediaType images aren't supported.
+
+----------------------------------------------------------------------------------Security-----------------------------------------------------------------------------
+
+Data protection: Encryption at rest, Encryption in transit(Through TLS --> Transport Layer Security channel)
+
+IAM:
