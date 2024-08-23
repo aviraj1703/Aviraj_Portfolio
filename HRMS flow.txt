@@ -1,0 +1,139 @@
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Scenario:
+
+No. of JDs - 5
+No. of Candidates - 1k (Login creds for Employee book)
+No. of Rounds - 2
+No. of Interviewers at each round - 1 (Total = JDs * Rounds = 5 * 2 = 10)
+No. of Users - 10 (Login creds for Admin book)
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Necessary csv files:
+
+1. JD.csv - JD details containing interviewers and rounds will be stored in it. It has below attributes(; separated).
+	  - Role: Job Title
+	  - Location: Job Location
+	  - Role Description: Job Description
+	  - Skills and Experience: Job requirements
+	  - Terms: Full Time/Internship
+	  - interviews: no. of rounds
+	  - roleBand: Band1/2 etc.
+	  - roleDepartment: IT/HR etc.
+	  - roleGrade: A/A* etc.
+	  - rolePosition: Trainee etc.
+	  - r1RecordId: id
+ 	  - r2RecordId: id
+	  - int1RecordId: id
+	  - int2RecordId: id
+	  - int1Email: email id for R1 interviewer
+	  - int2Email: email id for R2 interviewer
+	  - int1Name: name for R1 interviewer
+	  - int2Name: name for R2 interviewer
+
+2. Candidates.csv - All candidate details with hardcoded each round status will be stored in it. Attributes are as below(, separated).
+		  - fullName: testing2 (this works as username in source candidate login)
+		  - resumeStatus: Screen status (Accept/Reject)
+		  - r1Status: L1 status (Accept/Reject)
+		  - r2Status: L2 status (Accept/Reject)
+		  - offerStatus: Offer status (Accept/Reject)
+
+3. Users.csv - Contains encrypted password for all candidates(testing2, testing3, ...)
+
+4. Credentials.csv - Contains email id and encrypted password for 10 users.(, separated).
+
+5. Other csv will be generated dynamically no need to change in that.
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Flow for HRMS Accepted candidates in each stage
+
+Source  Screen    R1      R2    Offer
+  |       |       |       |       |  
+1000 --> 500 --> 300 --> 200 --> 100	(Loop count * users, users = 10)
+100  --> 50  --> 30  --> 20  --> 10	(This is no. of loop count provided in each respective thread to maintain flow)
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+There are 8 thread groups.
+
+1. Delete unnecessary files - Just leave it as it is. It's used to delete dynamically generated csv files before running it.
+			    - Loop count: 1
+			    - Threads(Users): 1 (No login require)
+
+
+2. Source and Screen - In this there are 2 simple controller 
+		     - Loop count: 100
+		     - Threads(Users): 10
+		     - Total: Threads * Loop count = 1000
+
+	1. Source Candidate - Candidates will apply here and upload resume.
+	   Requirements: JD.csv, Candidates.csv, Users.csv
+	   Generation: This stage will generate Applicants.csv (This contains all details of which candidate applied to which job)
+	
+	2. Screen Candidate
+	   Requirements: Credentials.csv, Applicants.csv 
+	   Generation: This stage will generate resumeAccept.csv (Accepted candidates for R1)
+
+
+3. Round 1 - Here meet scheduling for L1 will be done.
+	   - Requirements: Credentials.csv, resumeAccept.csv
+	   - Generation: This stage will not generate anything.
+	   - Loop count: 50
+	   - Threads(Users): 10
+	   - Total: Threads * Loop count = 500
+
+4. Round 1 result - Here we will Accept/Reject candidates for Round 2
+		  - Requirements: Credentials.csv, resumeAccept.csv
+	          - Generation: This stage will generate r1Accept.csv (Accepted candidates for R2)
+	          - Loop count: 50
+	          - Threads(Users): 10
+	          - Total: Threads * Loop count = 500
+
+5. Round 2 - Here meet scheduling for L2 will be done.
+	   - Requirements: Credentials.csv, r1Accept.csv
+	   - Generation: This stage will not generate anything.
+	   - Loop count: 30
+	   - Threads(Users): 10
+	   - Total: Threads * Loop count = 300
+
+6. Round 2 result - Here we will Accept/Reject candidates for sending offer letter
+		  - Requirements: Credentials.csv, r1Accept.csv
+	          - Generation: This stage will generate r2Accept.csv (Accepted candidates for offer letter)
+	          - Loop count: 30
+	          - Threads(Users): 10
+	          - Total: Threads * Loop count = 300
+
+7. Send offer - Here we will send offer letters to accepted candidates.
+	      - Requirements: Credentials.csv, r2Accept.csv
+	      - Generation: This stage will not generate anything.
+	      - Loop count: 20
+	      - Threads(Users): 10
+	      - Total: Threads * Loop count = 200
+
+8. Offer acceptance - Here candidates will accept/reject offer
+		    - Requirements: Users.csv, r2Accept.csv
+	            - Generation: This stage will generate offerAccept.csv (Candidates who accepted offer)
+	            - Loop count: 20
+	            - Threads(Users): 10
+	            - Total: Threads * Loop count = 200
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+At the end 100 candidates will be there with offer accepted.
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+revert push/merge
+UI/Terminal
+
+push revert using terminal working fine.
+merge revert using terminal won't work as we need to push after using git revert command and push is blocked for master/heads.
+
+push revert using UI is blocked as build will not happen.
+merge revert using UI is blocked as branch is not supported.
+
+revert branch name is "revert-anything"
+revert commit message is "Revert ${original commit message}"
